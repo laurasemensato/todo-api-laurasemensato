@@ -1,5 +1,6 @@
 // CONTROLLER: recebe da rota, chama o service e devolve a resposta.
 
+const validarId = require("../middlewares/validarId");
 const tarefaService = require("../services/tarefaService");
 
 // As funcoes do controller entram aqui.
@@ -34,4 +35,17 @@ async function atualizarParcial(req, res) {
   }
   res.status(200).json(tarefa);
 }
-module.exports = {listar, buscarPorId, criar ,atualizar,atualizarParcial}
+async function deletar(req, res) {
+  const indice = req.params.indice;
+res.status(204).send()
+  if (isNaN(indice)) {
+    res.status(400).json({ erro: "O id enviado deve ser um número válido" });
+    return;
+  }
+}
+  const erro = tarefaService.validarTarefa(req.body, true);
+if (erro) {
+res.status(400).json({ erro: erro });
+return;
+}
+module.exports = {listar, buscarPorId, criar ,atualizar,atualizarParcial, deletar,validarId};
