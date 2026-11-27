@@ -1,6 +1,6 @@
 # API de Tarefas
 
-**Aluno(a):** _(preencher)_
+**Aluno(a):** Laura Nunes Semensato
 
 API de gestão de tarefas feita com Node.js, Express e MySQL, no padrão MVC.
 
