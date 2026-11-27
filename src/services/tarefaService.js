@@ -7,5 +7,10 @@ const PRIORIDADES = ["baixa", "media", "alta"];
 const STATUS = ["a_fazer", "fazendo", "feita"];
 
 // As funcoes do service entram aqui.
+async function listarTarefas(filtros) {
+const [linhas] = await db.query("SELECT * FROM tarefas");
+let resultado = linhas;
+return resultado;
+}
+module.exports = { listarTarefas };
 
-module.exports = {};
