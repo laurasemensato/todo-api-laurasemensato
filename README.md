@@ -34,7 +34,7 @@ _(Sprint 2: uma linha para cada rota da API)_
 
 **Quadro no início:**
 
-![Quadro no início do Sprint 1](docs/sprint1-inicio.png)
+![Quadro no início do Sprint 1](https://github.com/laurasemensato/todo-api-laurasemensato/blob/main/docs/sprint1-inicio.png)
 
 **Quadro no fim:**
 
