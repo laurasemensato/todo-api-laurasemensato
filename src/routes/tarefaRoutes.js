@@ -3,6 +3,7 @@
 const express = require("express");
 const tarefaController = require("../controllers/tarefaController");
 const validarId = require("../middlewares/validarId");
+const { atualizarTarefa, listarTarefas } = require("../services/tarefaService");
 
 const router = express.Router();
 
@@ -12,5 +13,7 @@ const router = express.Router();
 router.get("/", tarefaController.listar);
 router.get("/:id", validarId, tarefaController.buscarPorId);
 router.post("/", tarefaController.criar);
+router.put("/:id", validarId, tarefaController.atualizar);
+router.patch("/:id", validarId, tarefaController.atualizarParcial);
 
 module.exports = router;
