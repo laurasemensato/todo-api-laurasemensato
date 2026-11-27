@@ -9,6 +9,7 @@ async function listar(req, res) {
 const tarefas = await tarefaService.listarTarefas(req.query);
 res.status(200).json(tarefas);
 }
+
 async function buscarPorId(req, res) {
 const tarefa = await tarefaService.buscarTarefaPorId(req.params.id);
 if (!tarefa) {
@@ -43,9 +44,5 @@ res.status(204).send()
     return;
   }
 }
-  const erro = tarefaService.validarTarefa(req.body, true);
-if (erro) {
-res.status(400).json({ erro: erro });
-return;
-}
-module.exports = {listar, buscarPorId, criar ,atualizar,atualizarParcial, deletar,validarId};
+
+module.exports = {listar, buscarPorId, criar ,atualizar,atualizarParcial, deletar};

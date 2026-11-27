@@ -12,14 +12,7 @@ const [linhas] = await db.query("SELECT * FROM tarefas");
 let resultado = linhas;
 return resultado;
 }
-if (filtros.status) {
-resultado = resultado.filter((tarefa) => tarefa.status === filtros.status);
-}
-if (filtros.prioridade) {
-resultado = resultado.filter(
-(tarefa) => tarefa.prioridade === filtros.prioridade,
-);
-}
+
 async function buscarTarefaPorId(id) {
 const [linhas] = await db.query("SELECT * FROM tarefas WHERE id = ?", [
 id,
@@ -70,5 +63,5 @@ return "O status deve ser a_fazer, fazendo ou feita";
 return null;
 }
 
-module.exports = { listarTarefas, buscarTarefaPorId, criarTarefa, atualizarTarefa, atualizarParcialTarefa, deletarTarefa,validarTarefa};
+module.exports = { listarTarefas, buscarTarefaPorId, criarTarefa, atualizarTarefa, atualizarParcialTarefa, deletarTarefa};
 
